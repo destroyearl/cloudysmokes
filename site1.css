@@ -235,6 +235,50 @@ section{
 }
 
 
+.card-container{
+    display:flex;
+
+    justify-content: center;
+    flex-wrap:wrap;
+    margin-top: 100px;
+}
+
+.card{
+    width:325px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    overflow:hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin:20px;
+}
+
+.card img{
+    width:100%;
+    height: 400px;
+}
+
+.card-content{
+    padding:16px
+}
+.card-content h3{
+    font-size: 28px;
+    margin-bottom:8px;
+}
+
+.card-content p{
+    color:var(--text-color);
+    font-size:15px;
+    line-height: 1.3;
+}
+
+.card-content .btn{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius: 4px;
+    margin-top:16px;
+}
+
+
 
 .last {
     color: var(--text-color);
@@ -251,6 +295,14 @@ section{
 /* Responsive Design */
 @media (max-width: 600px) {
     .footer {
+        padding: 40px 5%;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .last {
         padding: 40px 5%;
         grid-template-columns: 1fr;
         text-align: center;
@@ -339,43 +391,56 @@ section{
 .hero-text{
     padding-top:130px;
 }
-.hero-img{
-    height:500px;
-    width:500px;
-    margin:0 auto;
+.hero-img {
+   height:600px;
+   width:600px;
+   margin:0 auto;
 }
-.hero-img img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
-}
-
-@media(max-width:570px){
-.hero{
-    height:100vh;
-}
-.hero-img{
-    height:400px;
-    width:400px;
-    margin:0 auto;
-}
-:root{
-    --big-font:4rem;  
-}
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-@media(max-width:440px){
-    :root{
-        --big-font:3.4rem;  
+@media (max-width: 570px) {
+    .hero {
+        height: 100vh;
     }
-    .hero-text h5{
-        font-size:15px;
-    }
-    .hero-img{
-    height:360px;
-    width:360px;
-    margin:0 auto;
+    .hero-img {
+        height: 500px;
+        width: 500px;
+        margin: 0 auto;
     }
 
-}    
+    :root {
+        --big-font: 4rem;
+    }
+}
+
+@media (max-width: 440px) {
+    :root {
+        --big-font: 3.4rem;
+    }
+    
+    .hero-text h5 {
+        font-size: 15px;
+    }
+    .hero-img {
+        height:400px;
+        width: 400px;
+        margin:0 auto;
+    }
+
+    @media (max-width: 375px) { /* Specific for iPhone SE and similar devices */
+        .hero-img {
+            height:320px;
+            width:320px; /* Adjust to fit the screen better */
+            margin: 0 auto;
+        }
+        .hero-text h5 {
+            font-size: 14px; /* Make text smaller for better readability */
+        }
+    }
+
+}
+}
